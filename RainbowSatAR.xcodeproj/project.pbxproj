@@ -13,6 +13,9 @@
 		356639F5235B20AF00FA988D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356639F3235B20AF00FA988D /* Main.storyboard */; };
 		356639F7235B20B000FA988D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 356639F6235B20B000FA988D /* Assets.xcassets */; };
 		356639FA235B20B000FA988D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356639F8235B20B000FA988D /* LaunchScreen.storyboard */; };
+		358C99ED235B57E60014344A /* TLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358C99E9235B57E60014344A /* TLE.swift */; };
+		358C99EE235B57E60014344A /* TLEError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358C99EA235B57E60014344A /* TLEError.swift */; };
+		358C99EF235B57E60014344A /* SGP4Propagator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358C99EB235B57E60014344A /* SGP4Propagator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,10 @@
 		356639F6235B20B000FA988D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		356639F9235B20B000FA988D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		356639FB235B20B000FA988D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		358C99E8235B57E60014344A /* SwiftSGP4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftSGP4.h; sourceTree = "<group>"; };
+		358C99E9235B57E60014344A /* TLE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLE.swift; sourceTree = "<group>"; };
+		358C99EA235B57E60014344A /* TLEError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLEError.swift; sourceTree = "<group>"; };
+		358C99EB235B57E60014344A /* SGP4Propagator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGP4Propagator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +65,25 @@
 			children = (
 				356639ED235B20AF00FA988D /* AppDelegate.swift */,
 				356639EF235B20AF00FA988D /* art.scnassets */,
-				356639F1235B20AF00FA988D /* ViewController.swift */,
-				356639F3235B20AF00FA988D /* Main.storyboard */,
 				356639F6235B20B000FA988D /* Assets.xcassets */,
-				356639F8235B20B000FA988D /* LaunchScreen.storyboard */,
 				356639FB235B20B000FA988D /* Info.plist */,
+				356639F8235B20B000FA988D /* LaunchScreen.storyboard */,
+				356639F3235B20AF00FA988D /* Main.storyboard */,
+				358C99E7235B57E60014344A /* SwiftSGP4 */,
+				356639F1235B20AF00FA988D /* ViewController.swift */,
 			);
 			path = RainbowSatAR;
+			sourceTree = "<group>";
+		};
+		358C99E7235B57E60014344A /* SwiftSGP4 */ = {
+			isa = PBXGroup;
+			children = (
+				358C99EB235B57E60014344A /* SGP4Propagator.swift */,
+				358C99E8235B57E60014344A /* SwiftSGP4.h */,
+				358C99E9235B57E60014344A /* TLE.swift */,
+				358C99EA235B57E60014344A /* TLEError.swift */,
+			);
+			path = SwiftSGP4;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +158,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				358C99EE235B57E60014344A /* TLEError.swift in Sources */,
 				356639F2235B20AF00FA988D /* ViewController.swift in Sources */,
+				358C99ED235B57E60014344A /* TLE.swift in Sources */,
+				358C99EF235B57E60014344A /* SGP4Propagator.swift in Sources */,
 				356639EE235B20AF00FA988D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,14 +308,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E6MXHV54BF;
 				INFOPLIST_FILE = RainbowSatAR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rainbow6.RainbowSatAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -303,14 +329,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E6MXHV54BF;
 				INFOPLIST_FILE = RainbowSatAR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rainbow6.RainbowSatAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
