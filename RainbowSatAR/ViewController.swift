@@ -40,12 +40,18 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let scene = SCNScene()
         let globe = createGlobe()
         scene.rootNode.addChildNode(globe)
-        let satellitesParams = [SatelliteParams(id: "25544",
-                                                imageName: "art.scnassets/COW_SAT.png",
+        let satellitesParams = [SatelliteParams(id: "40059",
+                                                imageName: "art.scnassets/cow.png",
                                                 lineColor: .red),
                                 SatelliteParams(id: "28376",
                                                 imageName: "art.scnassets/bee.png",
-                                                lineColor: .blue)]
+                                                lineColor: .green),
+                                SatelliteParams(id: "27424",
+                                                imageName: "art.scnassets/dolphin.png",
+                                                lineColor: .blue),
+                                SatelliteParams(id: "25544",
+                                                imageName: "art.scnassets/astronaut.png",
+                                                lineColor: .purple)]
         for satelliteParams in satellitesParams {
             getSatelliteAndLines(id: satelliteParams.id,
                                  imageName: satelliteParams.imageName,
@@ -94,7 +100,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     
     private func createGlobe() -> SCNNode {
-        let sphere = SCNSphere(radius: 0.1)
+        let sphere = SCNSphere(radius: 0.2)
         let material = SCNMaterial()
         material.diffuse.contents = UIImage(named: "art.scnassets/snapshot-2019-10-18.jpg")
         sphere.firstMaterial = material
