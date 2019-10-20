@@ -106,6 +106,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sphere.firstMaterial = material
         let sphereNode = SCNNode(geometry: sphere)
         sphereNode.position = SCNVector3(0, 0, 0)
+        sphereNode.runAction(.repeatForever(.rotateBy(x: 0, y: 2 * .pi, z: 0, duration: 360)))
         return sphereNode
     }
     
